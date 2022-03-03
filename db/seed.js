@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const data = require('../foam-seed.json');
 
 const save = () => {
-  Reactor.insertMany(pokemonData)
+  Reactor.insertMany(data)
     .then((docs) => {
       console.log('Data inserted!');
     })

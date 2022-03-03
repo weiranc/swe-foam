@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 const reactorSchema = new mongoose.Schema({
   url: String,
   lastModified: String,
-  isFoaming: Boolean,
+  isFoaming: { type: String, default: 'unclassified' },
 });
 
 const Reactor = mongoose.model('Reactor', reactorSchema);
