@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoUrl = 'mongodb://localhost/foam';
+const mongoUrl = 'mongodb://localhost/reactors';
 
 const db = mongoose.connect(mongoUrl, {
   useNewUrlParser: true,
