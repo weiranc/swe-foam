@@ -7,4 +7,4 @@ router.route('/reactor/:isFoaming').get(controller.getAllByFilter);
 
 router.route('/reactor/:id').put(controller.updateFoamingStatus);
 
-module.export = router;
+module.exports = router;
