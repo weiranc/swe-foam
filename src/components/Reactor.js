@@ -37,12 +37,14 @@ const Reactor = (props) => {
         <span style={{ margin: '3%' }}>
           Current Status: <b>{status}</b>
         </span>
-        <select id='isFoaming' onChange={selectFoamingStatus}>
-          <option>----Select----</option>
-          <option>Unclassified</option>
-          <option>Foaming</option>
-          <option>Non-Foaming</option>
-        </select>
+        <div>
+          <select id='isFoaming' onChange={selectFoamingStatus}>
+            <option>----Select----</option>
+            <option>Unclassified</option>
+            <option>Foaming</option>
+            <option>Non-Foaming</option>
+          </select>
+        </div>
       </div>
     </div>
   );
