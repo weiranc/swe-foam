@@ -10,6 +10,12 @@ const ReactorList = () => {
     getAllData();
   }, []);
 
+  useEffect(() => {
+    if (isFoaming) {
+      filterStatus();
+    }
+  }, [isFoaming]);
+
   const getAllData = () => {
     axios
       .get('http://localhost:3001/reactor')
@@ -39,6 +45,9 @@ const ReactorList = () => {
   return (
     <div>
       <div>
+        <button onClick={getAllData} style={{ marginRight: '5%' }}>
+          Show All
+        </button>
         <select onChange={filteredData}>
           <option>Foaming</option>
           <option>Non-Foaming</option>
