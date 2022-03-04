@@ -1,3 +1,4 @@
+## Installation
 
 In the project directory, you can run:
 ```sh
