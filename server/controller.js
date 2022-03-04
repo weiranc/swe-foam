@@ -23,7 +23,7 @@ const controller = {
   updateFoamingStatus: function (req, res) {
     Reactor.findOneAndUpdate(
       { _id: req.params.id },
-      { isFoaming: req.body.isFoaming }
+      { isFoaming: req.body.status }
     )
       .then((response) => {
         res.status(204).send(response);

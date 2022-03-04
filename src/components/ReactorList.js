@@ -4,14 +4,15 @@ import Reactor from './Reactor';
 
 const ReactorList = () => {
   const [allData, setAllData] = useState([]);
+  const [isFoaming, setFilter] = useState('');
 
   useEffect(() => {
-    getAll();
+    getAllData();
   }, []);
 
   const getAllData = () => {
     axios
-      .get('/reactor')
+      .get('http://localhost:3001/reactor')
       .then((response) => {
         setAllData(response.data);
       })
@@ -20,8 +21,30 @@ const ReactorList = () => {
       });
   };
 
+  const filterStatus = () => {
+    axios
+      .get(`http://localhost:3001/reactor/${isFoaming}`)
+      .then((response) => {
+        setAllData(response.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
+  const filteredData = (e) => {
+    setFilter(e.target.value);
+  };
+
   return (
     <div>
+      <div>
+        <select onChange={filteredData}>
+          <option>Foaming</option>
+          <option>Non-Foaming</option>
+          <option>Unclassified</option>
+        </select>
+      </div>
       {allData.map((reactor) => {
         return <Reactor key={reactor._id} reactor={reactor} />;
       })}

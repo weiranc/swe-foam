@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import ReactorList from './components/ReactorList';
 
 function App() {
   return (
     <div className='App'>
-      <header className='App-header'>SWE Foam</header>
+      <h1>SWE Foam</h1>
+      <ReactorList />
     </div>
   );
 }
